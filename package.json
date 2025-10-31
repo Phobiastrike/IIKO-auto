@@ -1,27 +1,16 @@
 {
   "name": "iiko-auto",
   "version": "1.0.0",
-  "description": "Утилита для извлечения OLAP-отчётов из системы IIKO с маппингом в Excel формы",
+  "description": "Утилита для извлечения OLAP-отчётов из системы IIKO",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dev": "electron . --dev",
-    "pack": "electron-builder --win portable",
-    "dist": "electron-builder",
     "dist:win": "electron-builder --win portable --x64",
-    "dist:win-ia32": "electron-builder --win portable --ia32",
     "dist:mac": "electron-builder --mac",
-    "dist:all": "npm run dist:win && npm run dist:mac",
     "postinstall": "electron-builder install-app-deps"
   },
-  "keywords": [
-    "iiko",
-    "olap",
-    "reports",
-    "excel",
-    "automation"
-  ],
-  "author": "Your Name",
+  "keywords": ["iiko", "olap", "reports"],
+  "author": "Phobiastrike",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.7",
@@ -38,48 +27,16 @@
     "directories": {
       "output": "dist"
     },
-    "files": [
-      "**/*",
-      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
-      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
-      "!**/node_modules/*.d.ts",
-      "!**/node_modules/.bin",
-      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
-      "!.editorconfig",
-      "!**/._*",
-      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
-      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
-      "!**/{appveyor.yml,.travis.yml,circle.yml}",
-      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}",
-      "!dist/",
-      "!build/",
-      "!.github/"
-    ],
+    "files": ["**/*", "!dist", "!.github"],
     "asar": true,
-    "compression": "maximum",
-    "publish": null,
     "win": {
-      "target": [
-        {
-          "target": "portable",
-          "arch": ["x64"]
-        }
-      ],
-      "artifactName": "${productName}-${version}-windows-portable.${ext}"
+      "target": "portable",
+      "icon": "build/icon.ico"
     },
     "mac": {
-      "target": [
-        {
-          "target": "dmg",
-          "arch": ["x64", "arm64"]
-        }
-      ],
-      "category": "public.app-category.productivity",
-      "artifactName": "${productName}-${version}-macos.${ext}",
-      "darkModeSupport": true
-    },
-    "portable": {
-      "artifactName": "${productName}-${version}-windows-portable.${ext}"
+      "target": "dmg", 
+      "icon": "build/icon.icns",
+      "category": "public.app-category.productivity"
     }
   }
 }
