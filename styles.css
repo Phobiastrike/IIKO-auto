@@ -1,0 +1,574 @@
+/* styles.css (исправленная версия с переносом строк и фильтром часов) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.top-panel-improved {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px;
+}
+
+.app-title h1 {
+  font-size: 32px;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.app-subtitle {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.auth-panel-improved {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.auth-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 200px;
+}
+
+.auth-group label {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.report-params-improved {
+  padding: 30px;
+  background: #f8f9fa;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.params-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.param-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.param-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+.input-improved {
+  padding: 10px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.input-improved:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-improved {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.btn-improved:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: white;
+  color: #667eea;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-success {
+  background: #10b981;
+  color: white;
+}
+
+.btn-success:hover:not(:disabled) {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.btn-large {
+  padding: 14px 28px;
+  font-size: 16px;
+}
+
+.btn-icon {
+  font-size: 16px;
+}
+
+.actions-section {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.status-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-info {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status-success {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.preview-section-improved {
+  padding: 30px;
+  background: white;
+}
+
+.preview-header-improved {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.preview-info h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.preview-stats {
+  font-size: 13px;
+  color: #666;
+}
+
+.table-container-improved {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  max-width: 100%;
+  height: 500px;
+}
+
+.data-table-improved {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 800px;
+}
+
+.data-table-improved thead {
+  background: #f8f9fa;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.data-table-improved th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #e0e0e0;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  min-width: 100px;
+}
+
+.data-table-improved th:hover {
+  background: #e9ecef;
+}
+
+/* ПЕРЕНОС СТРОК В ЯЧЕЙКАХ ТАБЛИЦЫ */
+.data-table-improved td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #555;
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 1.4;
+  max-width: 300px;
+}
+
+/* Для числовых ячеек оставляем выравнивание по правому краю */
+.data-table-improved .numeric-cell {
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Для текстовых ячеек - перенос и выравнивание по левому краю */
+.data-table-improved .text-cell {
+  text-align: left;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.data-table-improved tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.data-table-improved tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* СТИЛИ ДЛЯ ФИЛЬТРОВ */
+.filter-row th {
+  padding: 4px 2px;
+  background: #e9ecef;
+  border-bottom: 2px solid #e0e0e0;
+  vertical-align: top;
+  min-width: 120px;
+  height: 32px;
+}
+
+.filter-placeholder {
+  height: 24px;
+}
+
+/* КОМПАКТНЫЕ ФИЛЬТРЫ С ВЫПАДАЮЩИМ МЕНЮ */
+.filter-checkbox-container {
+  position: relative;
+  display: inline-block;
+}
+
+.filter-button {
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  min-width: 32px;
+  height: 24px;
+  line-height: 1;
+}
+
+.filter-button:hover {
+  background: #5a6fd8;
+}
+
+.filter-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  min-width: 180px;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.filter-all-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.filter-options {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+  padding: 1px 0;
+}
+
+.filter-option label {
+  font-size: 11px;
+  cursor: pointer;
+  margin-left: 4px;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.filter-option input[type="checkbox"] {
+  margin: 0;
+  transform: scale(0.9);
+}
+
+/* Стили для скроллбара в фильтрах */
+.filter-dropdown::-webkit-scrollbar,
+.filter-options::-webkit-scrollbar {
+  width: 6px;
+}
+
+.filter-dropdown::-webkit-scrollbar-track,
+.filter-options::-webkit-scrollbar-track {
+  background: #f8f9fa;
+  border-radius: 3px;
+}
+
+.filter-dropdown::-webkit-scrollbar-thumb,
+.filter-options::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.filter-dropdown::-webkit-scrollbar-thumb:hover,
+.filter-options::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* СТИЛИ ДЛЯ ИТОГОВЫХ СТРОК */
+.total-row {
+  background: #e3f2fd !important;
+  font-weight: bold;
+  border-top: 2px solid #1976d2;
+}
+
+.total-row td {
+  border-top: 2px solid #1976d2;
+  font-weight: 700;
+}
+
+.subtotal-row {
+  background: #f3e5f5 !important;
+  font-style: italic;
+}
+
+.subtotal-row td {
+  border-top: 1px dashed #7b1fa2;
+  font-weight: 600;
+}
+
+.day-total-row {
+  background: #e8f5e8 !important;
+  font-weight: 600;
+  border-top: 1px solid #4caf50;
+}
+
+.day-total-row td {
+  border-top: 1px solid #4caf50;
+}
+
+.report-filters {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  padding: 20px;
+  background: #f8f9fa;
+  border-bottom: 2px solid #e0e0e0;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  min-width: 150px;
+}
+
+.filter-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+}
+
+.input-small {
+  padding: 10px 12px;
+  font-size: 14px;
+  min-width: 150px;
+}
+
+/* ВИЗУАЛЬНАЯ ОБРАТНАЯ СВЯЗЬ ПРИ КОПИРОВАНИИ */
+.cell-copied {
+  animation: copyFlash 0.3s ease;
+}
+
+@keyframes copyFlash {
+  0% {
+    background-color: #4caf50;
+    color: white;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+/* Дополнительный стиль для курсора на ячейках */
+.data-table-improved td {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.data-table-improved td:active {
+  background-color: #e8f5e9;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a0a0a0;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #808080;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .app-container {
+    max-width: 100vw;
+    margin: 10px;
+    border-radius: 8px;
+  }
+  
+  .top-panel-improved {
+    padding: 20px;
+  }
+  
+  .auth-panel-improved {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .auth-group {
+    min-width: 100%;
+  }
+  
+  .params-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .preview-header-improved {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .report-filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+  
+  .filter-group {
+    width: 100%;
+  }
+  
+  .filter-dropdown {
+    min-width: 180px;
+    max-height: 250px;
+  }
+  
+  .data-table-improved {
+    font-size: 12px;
+  }
+  
+  .data-table-improved th,
+  .data-table-improved td {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  
+  .app-title h1 {
+    font-size: 24px;
+  }
+  
+  .btn-improved {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+  
+  .preview-section-improved {
+    padding: 15px;
+  }
+}

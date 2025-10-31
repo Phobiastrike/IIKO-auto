@@ -1,0 +1,82 @@
+[28.10.2025, 10:02:30] SYSTEM: ========================================
+[28.10.2025, 10:02:30] SYSTEM: Application started
+[28.10.2025, 10:02:30] SYSTEM: Log file: C:\Users\black\Desktop\IIKO\logs\28.10.25 10.02\olap.log
+[28.10.2025, 10:02:30] SYSTEM: ========================================
+[28.10.2025, 10:02:30] SYSTEM: Electron app ready
+[28.10.2025, 10:02:30] SYSTEM: Creating main window...
+[28.10.2025, 10:02:34] AUTH: AUTH START
+[28.10.2025, 10:02:34] AUTH: AUTH TRY GET https://esmee-izh.iiko.it/resto/api/v2/auth?login=Nikita&pass=6371a5630b9dc4ebd3cd2b721357f87eee6c5f0c
+[28.10.2025, 10:02:34] AUTH: AUTH OK, key=c01ac8...
+[28.10.2025, 10:02:34] DICT: ========================================
+[28.10.2025, 10:02:34] DICT: Loading dictionaries...
+[28.10.2025, 10:02:34] DICT: Loading stores...
+[28.10.2025, 10:02:34] DICT: Trying: GET https://esmee-izh.iiko.it/resto/api/corporation/stores?key=c01ac8eb-fad3-09c4-6875-209e9b62506d
+[28.10.2025, 10:02:34] DICT: Response is array, length: 3
+[28.10.2025, 10:02:34] DICT: Processing 3 potential stores...
+[28.10.2025, 10:02:34] DICT: Trying: GET https://esmee-izh.iiko.it/resto/api/departments?key=c01ac8eb-fad3-09c4-6875-209e9b62506d
+[28.10.2025, 10:02:34] DICT: Endpoint failed: Request failed with status code 404
+[28.10.2025, 10:02:34] DICT: Trying: GET https://esmee-izh.iiko.it/resto/api/v2/entities/departments/list?key=c01ac8eb-fad3-09c4-6875-209e9b62506d
+[28.10.2025, 10:02:34] DICT: Endpoint failed: Request failed with status code 404
+[28.10.2025, 10:02:34] DICT: Trying: GET https://esmee-izh.iiko.it/resto/api/corporation/departments?key=c01ac8eb-fad3-09c4-6875-209e9b62506d
+[28.10.2025, 10:02:34] DICT: Response is array, length: 3
+[28.10.2025, 10:02:34] DICT: Processing 3 potential stores...
+[28.10.2025, 10:02:34] DICT: ✅ Loaded 0 store mappings
+[28.10.2025, 10:02:34] DICT: Loading accounts...
+[28.10.2025, 10:02:34] DICT: Endpoint failed: Request failed with status code 404
+[28.10.2025, 10:02:34] DICT: Endpoint failed: Request failed with status code 404
+[28.10.2025, 10:02:34] DICT: ✅ Loaded 54 accounts
+[28.10.2025, 10:02:34] DICT: Loading conceptions...
+[28.10.2025, 10:02:34] DICT: Endpoint failed: Request failed with status code 404
+[28.10.2025, 10:02:34] DICT: Endpoint failed: Request failed with status code 404
+[28.10.2025, 10:02:34] DICT: ✅ Loaded 0 conceptions
+[28.10.2025, 10:02:34] DICT: Loading products...
+[28.10.2025, 10:02:35] DICT: ✅ Loaded 1701 products
+[28.10.2025, 10:02:35] DICT: ========================================
+[28.10.2025, 10:02:35] OLAP: ========================================
+[28.10.2025, 10:02:35] OLAP: OLAP REQUEST START
+[28.10.2025, 10:02:35] OLAP: Report type: writeoffs
+[28.10.2025, 10:02:35] WRITEOFFS: ========================================
+[28.10.2025, 10:02:35] WRITEOFFS: GET WRITE-OFFS START
+[28.10.2025, 10:02:35] WRITEOFFS: Request: GET https://esmee-izh.iiko.it/resto/api/v2/documents/writeoff?key=c01ac8eb-fad3-09c4-6875-209e9b62506d&dateFrom=2025-10-21&dateTo=2025-10-28
+[28.10.2025, 10:02:35] WRITEOFFS: ✅ Found 63 writeoff documents
+[28.10.2025, 10:02:35] WRITEOFFS: ✅ Processed 63 writeoff documents
+[28.10.2025, 10:02:53] OLAP: ========================================
+[28.10.2025, 10:02:53] OLAP: OLAP REQUEST START
+[28.10.2025, 10:02:53] OLAP: Report type: guests
+[28.10.2025, 10:02:53] OLAP: Request POST https://esmee-izh.iiko.it/resto/api/v2/reports/olap?key=c01ac8eb-fad3-09c4-6875-209e9b62506d
+[28.10.2025, 10:02:53] OLAP: Response status: 200
+[28.10.2025, 10:02:53] OLAP: ========================================
+[28.10.2025, 10:03:20] OLAP: ========================================
+[28.10.2025, 10:03:20] OLAP: OLAP REQUEST START
+[28.10.2025, 10:03:20] OLAP: Report type: guests
+[28.10.2025, 10:03:20] OLAP: Request POST https://esmee-izh.iiko.it/resto/api/v2/reports/olap?key=c01ac8eb-fad3-09c4-6875-209e9b62506d
+[28.10.2025, 10:03:21] OLAP: Response status: 200
+[28.10.2025, 10:03:21] OLAP: ========================================
+[28.10.2025, 10:03:25] OLAP: ========================================
+[28.10.2025, 10:03:25] OLAP: OLAP REQUEST START
+[28.10.2025, 10:03:25] OLAP: Report type: guests
+[28.10.2025, 10:03:25] OLAP: Request POST https://esmee-izh.iiko.it/resto/api/v2/reports/olap?key=c01ac8eb-fad3-09c4-6875-209e9b62506d
+[28.10.2025, 10:03:26] OLAP: Response status: 200
+[28.10.2025, 10:03:26] OLAP: ========================================
+[28.10.2025, 10:03:34] OLAP: ========================================
+[28.10.2025, 10:03:34] OLAP: OLAP REQUEST START
+[28.10.2025, 10:03:34] OLAP: Report type: waiters
+[28.10.2025, 10:03:34] OLAP: Request POST https://esmee-izh.iiko.it/resto/api/v2/reports/olap?key=c01ac8eb-fad3-09c4-6875-209e9b62506d
+[28.10.2025, 10:03:34] OLAP: Response status: 200
+[28.10.2025, 10:03:34] OLAP: ========================================
+[28.10.2025, 10:03:40] OLAP: ========================================
+[28.10.2025, 10:03:40] OLAP: OLAP REQUEST START
+[28.10.2025, 10:03:40] OLAP: Report type: hourly
+[28.10.2025, 10:03:40] OLAP: Request POST https://esmee-izh.iiko.it/resto/api/v2/reports/olap?key=c01ac8eb-fad3-09c4-6875-209e9b62506d
+[28.10.2025, 10:03:40] OLAP: Response status: 200
+[28.10.2025, 10:03:40] OLAP: ========================================
+[28.10.2025, 10:04:46] OLAP: ========================================
+[28.10.2025, 10:04:46] OLAP: OLAP REQUEST START
+[28.10.2025, 10:04:46] OLAP: Report type: writeoffs
+[28.10.2025, 10:04:46] WRITEOFFS: ========================================
+[28.10.2025, 10:04:46] WRITEOFFS: GET WRITE-OFFS START
+[28.10.2025, 10:04:46] WRITEOFFS: Request: GET https://esmee-izh.iiko.it/resto/api/v2/documents/writeoff?key=c01ac8eb-fad3-09c4-6875-209e9b62506d&dateFrom=2025-10-01&dateTo=2025-10-28
+[28.10.2025, 10:04:46] WRITEOFFS: ✅ Found 210 writeoff documents
+[28.10.2025, 10:04:46] WRITEOFFS: ✅ Processed 210 writeoff documents
+[28.10.2025, 10:05:36] SYSTEM: Main window closed
+[28.10.2025, 10:05:36] SYSTEM: All windows closed

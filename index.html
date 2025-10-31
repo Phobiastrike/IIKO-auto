@@ -1,0 +1,106 @@
+<!-- index.html (с добавленным отчетом по складам) -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IIKO Auto - OLAP Отчеты</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="top-panel-improved">
+      <div class="app-title">
+        <h1>📊 IIKO Auto</h1>
+        <span class="app-subtitle">Система OLAP отчетности</span>
+      </div>
+
+      <div class="auth-panel-improved">
+        <div class="auth-group">
+          <label>Сервер</label>
+          <input type="text" id="server" placeholder="https://your-server.iiko.it/resto" class="input-improved">
+        </div>
+        <div class="auth-group">
+          <label>Логин</label>
+          <input type="text" id="login" placeholder="username" class="input-improved">
+        </div>
+        <div class="auth-group">
+          <label>Пароль</label>
+          <input type="password" id="password" placeholder="••••••" class="input-improved">
+        </div>
+        <button id="login-btn" class="btn-improved btn-primary">
+          <span class="btn-icon">🔐</span>
+          <span>Войти</span>
+        </button>
+        <span id="auth-status" class="status-badge"></span>
+      </div>
+    </div>
+
+    <div id="report-selector" class="report-params-improved" style="display: none;">
+      <div class="params-section">
+        <div class="section-title">Выбор отчета</div>
+        <div class="params-grid">
+          <div class="param-group">
+            <label>Тип отчета</label>
+            <select id="report-type" class="input-improved">
+              <option value="writeoffs">Акты списания</option>
+              <option value="guests">Кол-во чеков и гостей</option>
+              <option value="waiters">Выручка по официантам</option>
+              <option value="hourly">Почасовая выручка</option>
+              <option value="stores">Отчет по складам</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions-section">
+        <button id="get-report-btn" class="btn-improved btn-success btn-large">
+          <span class="btn-icon">📊</span>
+          <span>Получить отчет</span>
+        </button>
+        <span id="report-status" class="status-badge"></span>
+      </div>
+    </div>
+
+    <div id="preview-section" class="preview-section-improved" style="display: none;">
+      <div class="report-filters">
+        <div class="filter-group">
+          <label>За период</label>
+          <select id="period-select" class="input-improved input-small">
+            <option value="custom">Другой...</option>
+            <option value="today">Сегодня</option>
+            <option value="yesterday">Вчера</option>
+            <option value="current-week">Текущая неделя</option>
+            <option value="last-week">Прошлая неделя</option>
+            <option value="current-month">Текущий месяц</option>
+            <option value="last-month">Прошлый месяц</option>
+            <option value="current-year">Текущий год</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <label>с</label>
+          <input type="date" id="date-from" class="input-improved input-small">
+        </div>
+        
+        <div class="filter-group">
+          <label>по</label>
+          <input type="date" id="date-to" class="input-improved input-small">
+        </div>
+      </div>
+
+      <div class="preview-header-improved">
+        <div class="preview-info">
+          <h3 id="preview-title">Предпросмотр отчета</h3>
+          <span id="preview-stats" class="preview-stats"></span>
+        </div>
+      </div>
+
+      <div id="preview-table-container" class="table-container-improved">
+        <table id="preview-table" class="data-table-improved"></table>
+      </div>
+    </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
